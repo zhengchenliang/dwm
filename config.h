@@ -122,10 +122,10 @@ static Key keys[] = { // VITAL key complex
 	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = -1 } }, // rotate window to previous window
 	{ MODKEY,              XK_l,                    focusstack,     {.i = +1 } }, // focus window to next window
 	{ MODKEY,              XK_j,                    focusstack,     {.i = -1 } }, // focus window to previous window
-	{ MODKEY|ControlMask,  XK_n,                    viewtoleft,     {0} }, // 
-	{ MODKEY|ControlMask,  XK_m,                    viewtoright,    {0} }, //
-	{ MODKEY|ShiftMask,    XK_n,                    tagtoleft,      {0} }, //
-	{ MODKEY|ShiftMask,    XK_m,                    tagtoright,     {0} }, //
+	// { MODKEY|ControlMask,  XK_n,                    viewtoleft,     {0} }, // 
+	// { MODKEY|ControlMask,  XK_m,                    viewtoright,    {0} }, //
+	// { MODKEY|ShiftMask,    XK_n,                    tagtoleft,      {0} }, //
+	// { MODKEY|ShiftMask,    XK_m,                    tagtoright,     {0} }, //
 	{ MODKEY,              XK_o,                    incnmaster,     {.i = +1 } }, // increase one more main window (vertical layout)
 	{ MODKEY,              XK_p,                    incnmaster,     {.i = -1 } }, // decrease one more main window (vertical layout)// windows in page - main window in page left per vertical block - focus window is highlighted - windows can be tiled or floating
 	{ MODKEY,              XK_k,                    setmfact,       {.f = -0.05} }, // make main window smaller
@@ -146,10 +146,10 @@ static Key keys[] = { // VITAL key complex
 	{ MODKEY,              XK_apostrophe,           togglescratch,  {.v = scratchpadcmd } }, // scratchpad defined above
 	{ MODKEY,              XK_0,                    view,           {.ui = ~0 } }, // view all windows linked to any page
 	{ MODKEY|ShiftMask,    XK_0,                    tag,            {.ui = ~0 } }, // link focus window to all pages
-	{ MODKEY|ControlMask,  XK_comma,                focusmon,       {.i = -1 } }, // focus on previous page
-	{ MODKEY|ControlMask,  XK_period,               focusmon,       {.i = +1 } }, // focus on next page
-	{ MODKEY|ShiftMask,    XK_comma,                tagmon,         {.i = -1 } }, // send focus window to previous page
-	{ MODKEY|ShiftMask,    XK_period,               tagmon,         {.i = +1 } }, // send focus window to next page
+	// { MODKEY|ControlMask,  XK_comma,                focusmon,       {.i = -1 } }, // focus on previous page
+	// { MODKEY|ControlMask,  XK_period,               focusmon,       {.i = +1 } }, // focus on next page
+	// { MODKEY|ShiftMask,    XK_comma,                tagmon,         {.i = -1 } }, // send focus window to previous page
+	// { MODKEY|ShiftMask,    XK_period,               tagmon,         {.i = +1 } }, // send focus window to next page
 	TAGKEYS(               XK_1,                                    0) // ModMask + 5 = switch current page to page 5
 	TAGKEYS(               XK_2,                                    1) // ModMask + Shift + 5 = link focus window to page 5
 	TAGKEYS(               XK_3,                                    2) // ModMask + Shift + Ctrl + 5 = link/unlink focus window to/from page 5
@@ -159,7 +159,7 @@ static Key keys[] = { // VITAL key complex
 	TAGKEYS(               XK_7,                                    6)
 	TAGKEYS(               XK_8,                                    7)
 	TAGKEYS(               XK_9,                                    8)
-	{ MODKEY|ShiftMask,    XK_p,                    quit,           {0} }, // exit dwm
+	{ MODKEY|ShiftMask,    XK_p,                    spawn,          SHCMD("killall .base-dwm-bar dwm") }, // exit dwm
 };
 
 /* button definitions */
