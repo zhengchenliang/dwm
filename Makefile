@@ -45,10 +45,11 @@ install: all
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	cp -f scripts/base-dwm.sh ~/.base-dwm
 	cp -f scripts/base-dwm-bar.sh ~/.base-dwm-bar
+	cp -f scripts/base-dwm-color.sh ~/.base-dwm-color
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
-	rm -f ~/.base-dwm ~/.base-dwm-bar
+	rm -f ~/.base-dwm ~/.base-dwm-bar ~/.base-dwm-color
 
 .PHONY: all options clean dist install uninstall

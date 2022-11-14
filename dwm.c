@@ -346,7 +346,6 @@ static Window root, wmcheckwin;
 static int hiddenWinStackTop = -1;
 static Client *hiddenWinStack[hiddenWinStackMax];
 
-
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 

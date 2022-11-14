@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ~/.base-dwm-color
+
 tmpr() {
   tmpr_cpu=$(sensors | awk '/Package/{print $4}')
   tmpr_mem=$(sensors | awk '/nouveau/{a=NR+3}{if(NR==a)print $2}')
@@ -32,17 +34,22 @@ iost() {
   sata_tmp=$(iostat | awk '/sda/')
   sata_spdr=$(echo ${sata_tmp} | awk '{print $3}')
   sata_spdw=$(echo ${sata_tmp} | awk '{print $4}')
-  printf "I: nvme/sata=${nvme_spdr}/${sata_spdr} kB/s\n"
-  printf "O: nvme/sata=${nvme_spdw}/${sata_spdw} kB/s\n"
+  # case ${nnj} in
+  #   0) printf "O: nvme/sata=${nvme_spdw}/${sata_spdw} kB/s" ;;
+  #   1) printf "I: nvme/sata=${nvme_spdr}/${sata_spdr} kB/s" ;;
+  # esac
+  printf "I: nvme/sata=${nvme_spdr}/${sata_spdr} kB/s O: nvme/sata=${nvme_spdw}/${sata_spdw} kB/s"
 }
 
 timi() {
   time_now=$(date '+%H:%M:%S.%3N')
-  printf "TIME: ${time_now}"
+  printf "^c$cr1black^ ^b$cr1white^ TIME: ${time_now}"
+  printf "^c$cr1black^ ^b$cr1green^ CPU"
 }
 
-nn=0
+nn=0; nnj=0
 while true; do
+  nnj=$(expr ${nn} % 2)
   sleep 1 && xsetroot -name "$(tmpr) $(proc) $(cpu) $(memo) $(iost) $(timi)"
   nn=$((nn + 1))
 done
