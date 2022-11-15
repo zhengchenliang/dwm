@@ -52,5 +52,5 @@ nn=0; nnj=0
 while true; do
   nnj=$(expr ${nn} % 2)
   sleep 1 && xsetroot -name "$(tmpr) $(proc) $(cpu) $(memo) $(iost) $(timi)"
-  nn=$((nn + 1))
+  # nn=$((nn + 1))
 done
