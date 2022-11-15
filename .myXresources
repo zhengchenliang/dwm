@@ -1,0 +1,17 @@
+! https://wiki.archlinux.org/title/font_configuration
+
+! Anti-aliasing: improve fonts display resolution
+Xft.antialias:   1
+! Hinting: math fit fonts to 300 dpi
+Xft.hinting:     1
+! Auto hint: fit whenever there exists default fits
+Xft.autohint:    0
+! Hint style: default
+Xft.hintstyle:   hintslight
+! Monitor display: RGB
+Xft.rgba:        rgb
+! LCD filter: subpixel rendering
+Xft.lcdfilter:   lcddefault
+
+! window padding
+st.borderpx: 20
