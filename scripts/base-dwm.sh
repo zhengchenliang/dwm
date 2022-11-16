@@ -9,5 +9,7 @@ xset -dpms
 xset s off
 xset r rate 300 45 &
 
+setxkbmap -option caps:swapescape
+
 source ~/.base-dwm-bar &
 while type dwm >/dev/null; do dwm && continue || break; done
