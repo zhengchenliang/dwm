@@ -11,5 +11,7 @@ xset r rate 300 45 &
 
 setxkbmap -option caps:swapescape
 
+# picom &
+
 source ~/.base-dwm-bar &
 while type dwm >/dev/null; do dwm && continue || break; done
