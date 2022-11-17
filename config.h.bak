@@ -178,7 +178,8 @@ static Key keys[] = { // VITAL key complex
 	TAGKEYS(               XK_8,                                      7)
 	TAGKEYS(               XK_9,                                      8)
 
-	{ MODKEY|ShiftMask,    XK_p,                    spawn,            SHCMD("killall .base-dwm-bar dwm") }, // exit dwm
+	// { MODKEY|ShiftMask,    XK_p,                    quit,             {0} }, // exit dwm
+	{ MODKEY|ShiftMask,    XK_p,                    spawn,            SHCMD("killall dwm") }, // exit dwm
 };
 
 /* button definitions */

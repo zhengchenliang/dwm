@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/.base-dwm-color
+. $HOME/.base-dwm-color
 
 tmpr() {
   tmpr_cpu=$(sensors | awk '/Package/{print $4}')

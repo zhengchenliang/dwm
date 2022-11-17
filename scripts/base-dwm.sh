@@ -11,9 +11,9 @@ xset r rate 300 45 &
 
 setxkbmap -option caps:swapescape
 
-# First run picom --diagnostics, if glx backend fails because of fuking nvidia card then change a backend
+# First run picom --diagnostics, if glx backend fails because of fuking nvidia card then change a backend in picom.conf
 picom --backend xrender &
 
-source ~/.base-dwm-bar &
-# while type dwm >/dev/null; do dwm && continue || break; done
-exec dwm
+source $HOME/.base-dwm-bar &
+while type dwm >/dev/null; do dwm && continue || break; done # SHCMD("killall dwm")
+# exec dwm # quit
