@@ -2,7 +2,8 @@
 
 export LC_ALL="en_US.UTF-8"
 
-feh --bg-fill ~/F0_user_files/F/Rec/Image/screen_photos/11.jpg
+# feh --bg-fill --no-fehbg ~/F0_user_files/F/Rec/Image/screen_photos/11.jpg
+$(while true; do feh --bg-fill --randomize --no-fehbg ~/F0_user_files/F/Rec/Image/ycc/*.jpg; sleep 300; done) &
 
 # xrdb merge ~/.Xresources
 xset -dpms

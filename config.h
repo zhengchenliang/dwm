@@ -94,8 +94,6 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const char *browsercmd[]  = { "firefox", NULL };
 
-static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
-
 static const char *setqwertycmd[]  = { "~/D0_desktop_base/dwm_me/scripts/david/setxmodmap-qwerty.sh", NULL };
 static const char *setcolemakcmd[]  = { "~/D0_desktop_base/dwm_me/scripts/david/scripts/setxmodmap-colemak.sh", NULL };
 static const char *suspendcmd[]  = { "~/D0_desktop_base/dwm_me/scripts/david/scripts/suspend.sh", NULL };
@@ -156,7 +154,6 @@ static Key keys[] = { // VITAL key complex
 	// { MODKEY|ShiftMask,    XK_comma,                tagmon,           {.i = -1 } }, // send focus window to previous page
 	// { MODKEY|ShiftMask,    XK_period,               tagmon,           {.i = +1 } }, // send focus window to next page
 
-	{ 0,                   XK_Print,                spawn,            {.v = screenshotcmd } }, // open screenshot - defined above flameshot
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,            {.v = downvol } }, // volume ctrl - defined above sh
 	{ 0,                   XF86XK_AudioMute,        spawn,            {.v = mutevol } }, // volume ctrl - defined above sh
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,            {.v = upvol   } }, // volume ctrl - defined above sh
@@ -179,6 +176,7 @@ static Key keys[] = { // VITAL key complex
 	TAGKEYS(               XK_9,                                      8)
 
 	// { MODKEY|ShiftMask,    XK_p,                    quit,             {0} }, // exit dwm
+  { MODKEY|ShiftMask,    XK_s,                    spawn,            SHCMD("import ss_$(date +%Y-%m-%d-%H-%M-%S).png") }, // screenshot using imagemagick from pacman
 	{ MODKEY|ShiftMask,    XK_p,                    spawn,            SHCMD("killall dwm") }, // exit dwm
 };
 
