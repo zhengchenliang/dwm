@@ -14,6 +14,8 @@ options:
 	@echo "LDFLAGS  = ${LDFLAGS}"
 	@echo "CC       = ${CC}"
 
+CFLAGS += -Wno-implicit-function-declaration
+
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
